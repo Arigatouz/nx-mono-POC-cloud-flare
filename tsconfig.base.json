@@ -14,7 +14,14 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "calandar/Routes": ["apps/calandar/src/app/remote-entry/entry.routes.ts"],
+      "hr/Routes": ["apps/hr/src/app/remote-entry/entry.routes.ts"],
+      "projects/Routes": ["apps/projects/src/app/remote-entry/entry.routes.ts"],
+      "timeMangment/Routes": [
+        "apps/timeMangment/src/app/remote-entry/entry.routes.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

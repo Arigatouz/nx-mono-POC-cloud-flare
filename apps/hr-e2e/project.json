@@ -1,0 +1,9 @@
+{
+  "name": "hr-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/hr-e2e/src",
+  "implicitDependencies": ["hr"],
+  "// targets": "to see all targets run: nx show project hr-e2e --web",
+  "targets": {}
+}

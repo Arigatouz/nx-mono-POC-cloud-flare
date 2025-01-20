@@ -1,0 +1,9 @@
+{
+  "name": "calandar-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/calandar-e2e/src",
+  "implicitDependencies": ["calandar"],
+  "// targets": "to see all targets run: nx show project calandar-e2e --web",
+  "targets": {}
+}

@@ -1,0 +1,9 @@
+{
+  "name": "timeMangment-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/timeMangment-e2e/src",
+  "implicitDependencies": ["timeMangment"],
+  "// targets": "to see all targets run: nx show project timeMangment-e2e --web",
+  "targets": {}
+}
