@@ -20,7 +20,8 @@
       "projects/Routes": ["apps/projects/src/app/remote-entry/entry.routes.ts"],
       "timeMangment/Routes": [
         "apps/timeMangment/src/app/remote-entry/entry.routes.ts"
-      ]
+      ],
+      "tracker/Routes": ["apps/tracker/src/app/remote-entry/entry.routes.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

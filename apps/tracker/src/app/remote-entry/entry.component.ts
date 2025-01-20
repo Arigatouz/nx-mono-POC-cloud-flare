@@ -4,9 +4,7 @@ import { NxWelcomeComponent } from './nx-welcome.component';
 
 @Component({
   imports: [CommonModule, NxWelcomeComponent],
-  selector: 'ng-mf-hr-entry',
-  template: ` <ng-mf-nx-welcome></ng-mf-nx-welcome>`,
+  selector: 'ng-mf-tracker-entry',
+  template: `<ng-mf-nx-welcome></ng-mf-nx-welcome>`,
 })
-export class RemoteEntryComponent {
-
-}
+export class RemoteEntryComponent {}

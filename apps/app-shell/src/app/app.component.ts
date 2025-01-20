@@ -9,4 +9,8 @@ import { RouterModule } from '@angular/router';
 })
 export class AppComponent {
   title = 'app-shell';
+
+  saveJwt() {
+    localStorage.setItem('jwt', 'zeo el neo el pew el heo el  neo el');
+  }
 }

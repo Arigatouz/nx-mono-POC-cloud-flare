@@ -183,7 +183,7 @@
                 </a>
               </li>
               <li>
-                <a  routerLink="/projects" routerLinkActive="bg-gray-800"
+                <a routerLink="/projects" routerLinkActive="bg-gray-800"
                    class="group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-gray-400 hover:bg-gray-800 hover:text-white">
                   <svg class="size-6 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                        aria-hidden="true" data-slot="icon">
@@ -194,7 +194,7 @@
                 </a>
               </li>
               <li>
-                <a  routerLink="/calendar" routerLinkActive="bg-gray-800"
+                <a routerLink="/calendar" routerLinkActive="bg-gray-800"
                    class="group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-gray-400 hover:bg-gray-800 hover:text-white">
                   <svg class="size-6 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                        aria-hidden="true" data-slot="icon">
@@ -216,14 +216,14 @@
                 </a>
               </li>
               <li>
-                <a href="#"
+                <a [routerLink]="[{ outlets: { timeTracker: ['tracker'] } }]"
                    class="group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-gray-400 hover:bg-gray-800 hover:text-white">
                   <svg class="size-6 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                        aria-hidden="true" data-slot="icon">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 1 0 7.5 7.5h-7.5V6Z" />
                     <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0 0 13.5 3v7.5Z" />
                   </svg>
-                  Reports
+                  Tracker
                 </a>
               </li>
             </ul>
@@ -233,7 +233,7 @@
             <ul role="list" class="-mx-2 mt-2 space-y-1">
               <li>
                 <!-- Current: "bg-gray-800 text-white", Default: "text-gray-400 hover:text-white hover:bg-gray-800" -->
-                <a href="#"
+                <a href="/"
                    class="group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-gray-400 hover:bg-gray-800 hover:text-white">
                   <span
                     class="flex size-6 shrink-0 items-center justify-center rounded-lg border border-gray-700 bg-gray-800 text-[0.625rem] font-medium text-gray-400 group-hover:text-white">H</span>
@@ -241,11 +241,11 @@
                 </a>
               </li>
               <li>
-                <a href="#"
+                <a (click)="saveJwt()"
                    class="group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold text-gray-400 hover:bg-gray-800 hover:text-white">
                   <span
                     class="flex size-6 shrink-0 items-center justify-center rounded-lg border border-gray-700 bg-gray-800 text-[0.625rem] font-medium text-gray-400 group-hover:text-white">T</span>
-                  <span class="truncate">Tailwind Labs</span>
+                  <span class="truncate">JWT saver</span>
                 </a>
               </li>
               <li>
@@ -337,8 +337,13 @@
     </div>
 
     <main class="py-10">
-      <div class="px-4 sm:px-6 lg:px-8">
-        <router-outlet></router-outlet>
+      <div class="px-4 sm:px-6 lg:px-8 flex flex-col gap-y-20 ">
+        <div>
+          <router-outlet name="timeTracker"></router-outlet>
+        </div>
+        <div>
+          <router-outlet></router-outlet>
+        </div>
       </div>
     </main>
   </div>

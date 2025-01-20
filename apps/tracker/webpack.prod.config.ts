@@ -19,7 +19,6 @@ export default withModuleFederation(
      *   ['app2', 'https://app2.example.com'],
      * ]
      */
-    remotes: [['hr', 'http://localhost:8080']],
   },
   { dts: false }
 );
