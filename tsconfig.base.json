@@ -15,6 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@multi-app-in-routes/pew": ["libs/shared/pew/src/index.ts"],
+      "@multi-app-in-routes/test": ["libs/test/src/index.ts"],
       "calandar/Routes": ["apps/calandar/src/app/remote-entry/entry.routes.ts"],
       "hr/Routes": ["apps/hr/src/app/remote-entry/entry.routes.ts"],
       "projects/Routes": ["apps/projects/src/app/remote-entry/entry.routes.ts"],

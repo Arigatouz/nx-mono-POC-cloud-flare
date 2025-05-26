@@ -15,7 +15,13 @@ const config: ModuleFederationConfig = {
    *
    */
 
-  remotes: ['hr', 'projects', 'timeMangment', 'calandar', 'tracker'],
+  remotes: [
+    ['hr', 'http://localhost:4201'],
+    ['timeMangment', 'http://localhost:4202'],
+    ['calandar', 'http://localhost:4203'],
+    ['tracker', 'http://localhost:4204'],
+    ['projects', 'http://localhost:4205'],
+  ],
 };
 
 /**

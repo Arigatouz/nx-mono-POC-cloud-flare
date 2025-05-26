@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NxWelcomeComponent } from './nx-welcome.component';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
-  imports: [CommonModule, NxWelcomeComponent],
+  imports: [CommonModule, RouterOutlet],
   selector: 'ng-mf-hr-entry',
-  template: ` <ng-mf-nx-welcome></ng-mf-nx-welcome>`,
+  template: `sdsadZ-=> <router-outlet></router-outlet>`,
 })
-export class RemoteEntryComponent {
-
-}
+export class RemoteEntryComponent {}
