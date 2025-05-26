@@ -11,6 +11,7 @@
     "build:tracker": "nx build tracker --configuration=production",
     "build:projects": "nx build projects --configuration=production",
     "deploy:cloudflare": "wrangler pages deploy dist/apps --project-name=multi-app-in-routes",
+    "deploy": "npm run deploy:cloudflare",
     "serve:app-shell": "nx serve app-shell",
     "serve:all": "nx run-many --target=serve --all"
   },

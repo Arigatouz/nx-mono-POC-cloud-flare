@@ -86,6 +86,11 @@ This project is configured for deployment to Cloudflare Pages, a fast, secure, a
 
 2. Deploy to Cloudflare Pages:
    ```sh
+   npm run deploy
+   ```
+
+   Or use the more explicit command:
+   ```sh
    npm run deploy:cloudflare
    ```
 
@@ -97,8 +102,11 @@ Alternatively, you can set up continuous deployment by connecting your GitHub re
 4. Connect your GitHub repository
 5. Configure the build settings:
    - Build command: `npm ci && npm run build`
+   - Deploy command: `npx wrangler pages deploy dist/apps --project-name=multi-app-in-routes`
    - Build output directory: `dist/apps`
    - Root directory: `/`
+
+   **IMPORTANT**: Make sure to use `wrangler pages deploy` in your deploy command, not just `wrangler deploy` which is for Workers projects.
 
 ### Configuration Files
 
@@ -113,6 +121,7 @@ This project uses the latest version of Wrangler (v4+). If you're migrating from
 
 - The package name has changed from `@cloudflare/wrangler` to `wrangler`
 - The command to deploy to Cloudflare Pages has changed from `wrangler pages publish` to `wrangler pages deploy`
+- **IMPORTANT**: Always use `wrangler pages deploy` for Pages projects, not `wrangler deploy` which is for Workers projects
 - The wrangler.toml configuration for Pages projects is simplified and only requires a few fields:
   ```toml
   name = "multi-app-in-routes"
