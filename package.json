@@ -2,7 +2,18 @@
   "name": "@multi-app-in-routes/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "build": "nx run-many --target=build --configuration=production --all",
+    "build:app-shell": "nx build app-shell --configuration=production",
+    "build:hr": "nx build hr --configuration=production",
+    "build:timeMangment": "nx build timeMangment --configuration=production",
+    "build:calandar": "nx build calandar --configuration=production",
+    "build:tracker": "nx build tracker --configuration=production",
+    "build:projects": "nx build projects --configuration=production",
+    "deploy:cloudflare": "wrangler pages publish dist/apps --project-name=multi-app-in-routes",
+    "serve:app-shell": "nx serve app-shell",
+    "serve:all": "nx run-many --target=serve --all"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~19.0.0",
@@ -19,6 +30,7 @@
   },
   "devDependencies": {
     "@analogjs/vite-plugin-angular": "~1.10.0",
+    "@cloudflare/wrangler": "^1.19.12",
     "@analogjs/vitest-angular": "~1.10.0",
     "@angular-devkit/build-angular": "~19.0.0",
     "@angular-devkit/core": "~19.0.0",

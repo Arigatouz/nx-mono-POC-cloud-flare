@@ -1,0 +1,7 @@
+# Redirects for client-side routing
+/hr/*              /hr/index.html     200
+/timeMangment/*    /timeMangment/index.html     200
+/calandar/*        /calandar/index.html     200
+/tracker/*         /tracker/index.html     200
+/projects/*        /projects/index.html     200
+/*                 /index.html     200

@@ -19,7 +19,13 @@ export default withModuleFederation(
      *   ['app2', 'https://app2.example.com'],
      * ]
      */
-    remotes: [['hr', 'http://localhost:8080']],
+    remotes: [
+      ['hr', 'https://multi-app-in-routes.pages.dev/hr'],
+      ['timeMangment', 'https://multi-app-in-routes.pages.dev/timeMangment'],
+      ['calandar', 'https://multi-app-in-routes.pages.dev/calandar'],
+      ['tracker', 'https://multi-app-in-routes.pages.dev/tracker'],
+      ['projects', 'https://multi-app-in-routes.pages.dev/projects'],
+    ],
   },
   { dts: false }
 );

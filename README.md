@@ -66,6 +66,61 @@ Nx Console is an editor extension that enriches your developer experience. It le
 
 [Install Nx Console &raquo;](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 
+## Deploying to Cloudflare Pages
+
+This project is configured for deployment to Cloudflare Pages, a fast, secure, and developer-friendly platform for deploying web applications.
+
+### Prerequisites
+
+1. A Cloudflare account
+2. Cloudflare Wrangler CLI installed (`npm install -g @cloudflare/wrangler`)
+3. Authenticated with Cloudflare (`wrangler login`)
+
+### Deployment Steps
+
+1. Build the application for production:
+   ```sh
+   npm run build
+   ```
+
+2. Deploy to Cloudflare Pages:
+   ```sh
+   npm run deploy:cloudflare
+   ```
+
+Alternatively, you can set up continuous deployment by connecting your GitHub repository to Cloudflare Pages:
+
+1. Go to the Cloudflare Dashboard
+2. Navigate to Pages
+3. Click "Create a project"
+4. Connect your GitHub repository
+5. Configure the build settings:
+   - Build command: `npm ci && npm run build`
+   - Build output directory: `dist/apps`
+   - Root directory: `/`
+
+### Configuration Files
+
+- `cloudflare.yml`: Contains the main configuration for Cloudflare Pages
+- `wrangler.toml`: Contains additional configuration for Cloudflare Workers
+- `apps/app-shell/public/_redirects`: Configures routing for the SPA
+- `apps/app-shell/public/_headers`: Configures HTTP headers for security and caching
+
+### Module Federation in Production
+
+The application uses Module Federation to load micro-frontends. In production, the remotes are configured to use the Cloudflare Pages domain:
+
+```typescript
+// apps/app-shell/webpack.prod.config.ts
+remotes: [
+  ['hr', 'https://multi-app-in-routes.pages.dev/hr'],
+  ['timeMangment', 'https://multi-app-in-routes.pages.dev/timeMangment'],
+  ['calandar', 'https://multi-app-in-routes.pages.dev/calandar'],
+  ['tracker', 'https://multi-app-in-routes.pages.dev/tracker'],
+  ['projects', 'https://multi-app-in-routes.pages.dev/projects'],
+]
+```
+
 ## Useful links
 
 Learn more:

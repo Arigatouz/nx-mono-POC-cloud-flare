@@ -1,0 +1,19 @@
+name: multi-app-in-routes
+build:
+  commands:
+    - npm ci
+    - npx nx run-many --target=build --configuration=production --all
+  output: dist/apps
+routes:
+  - pattern: /hr/*
+    destination: hr/index.html
+  - pattern: /timeMangment/*
+    destination: timeMangment/index.html
+  - pattern: /calandar/*
+    destination: calandar/index.html
+  - pattern: /tracker/*
+    destination: tracker/index.html
+  - pattern: /projects/*
+    destination: projects/index.html
+  - pattern: /*
+    destination: app-shell/index.html
