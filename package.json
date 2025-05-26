@@ -32,7 +32,7 @@
     "@analogjs/vite-plugin-angular": "~1.10.0",
     "@cloudflare/wrangler": "^1.19.12",
     "@analogjs/vitest-angular": "~1.10.0",
-    "@angular-devkit/build-angular": "~19.0.0",
+    "@angular-devkit/build-angular": "~19.2.13",
     "@angular-devkit/core": "~19.0.0",
     "@angular-devkit/schematics": "~19.0.0",
     "@angular/cli": "~19.0.0",
