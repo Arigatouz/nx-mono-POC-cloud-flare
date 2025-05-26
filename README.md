@@ -109,10 +109,15 @@ Alternatively, you can set up continuous deployment by connecting your GitHub re
 
 ### Wrangler Version
 
-This project uses the latest version of Wrangler (v3+). If you're migrating from Wrangler v1 (@cloudflare/wrangler), please note the following changes:
+This project uses the latest version of Wrangler (v4+). If you're migrating from Wrangler v1 (@cloudflare/wrangler), please note the following changes:
 
 - The package name has changed from `@cloudflare/wrangler` to `wrangler`
 - The command to deploy to Cloudflare Pages has changed from `wrangler pages publish` to `wrangler pages deploy`
+- The wrangler.toml configuration for Pages projects is simplified and only requires a few fields:
+  ```toml
+  name = "multi-app-in-routes"
+  pages_build_output_dir = "dist/apps"
+  ```
 - For more information, see the [Wrangler Migration Guide](https://developers.cloudflare.com/workers/wrangler/migration/migrating-from-wrangler-1/#update-wrangler-version)
 
 ### Module Federation in Production
