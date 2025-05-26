@@ -73,7 +73,8 @@ This project is configured for deployment to Cloudflare Pages, a fast, secure, a
 ### Prerequisites
 
 1. A Cloudflare account
-2. Cloudflare Wrangler CLI installed (`npm install -g @cloudflare/wrangler`)
+2. Cloudflare Wrangler CLI installed (`npm install -g wrangler`)
+   - Note: If you previously installed `@cloudflare/wrangler`, you should uninstall it first: `npm uninstall -g @cloudflare/wrangler`
 3. Authenticated with Cloudflare (`wrangler login`)
 
 ### Deployment Steps
@@ -105,6 +106,14 @@ Alternatively, you can set up continuous deployment by connecting your GitHub re
 - `wrangler.toml`: Contains additional configuration for Cloudflare Workers
 - `apps/app-shell/public/_redirects`: Configures routing for the SPA
 - `apps/app-shell/public/_headers`: Configures HTTP headers for security and caching
+
+### Wrangler Version
+
+This project uses the latest version of Wrangler (v3+). If you're migrating from Wrangler v1 (@cloudflare/wrangler), please note the following changes:
+
+- The package name has changed from `@cloudflare/wrangler` to `wrangler`
+- The command to deploy to Cloudflare Pages has changed from `wrangler pages publish` to `wrangler pages deploy`
+- For more information, see the [Wrangler Migration Guide](https://developers.cloudflare.com/workers/wrangler/migration/migrating-from-wrangler-1/#update-wrangler-version)
 
 ### Module Federation in Production
 
