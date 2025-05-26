@@ -126,8 +126,19 @@ This project uses the latest version of Wrangler (v4+). If you're migrating from
   ```toml
   name = "multi-app-in-routes"
   pages_build_output_dir = "dist/apps"
+  compatibility_date = "2025-05-26"
   ```
+
+  **IMPORTANT**: Do not use the `[assets]` section in wrangler.toml for Pages projects as it is not supported and will cause deployment errors.
 - For more information, see the [Wrangler Migration Guide](https://developers.cloudflare.com/workers/wrangler/migration/migrating-from-wrangler-1/#update-wrangler-version)
+
+### HTTPS and Security
+
+This application is configured to use HTTPS for all connections. Cloudflare Pages automatically provides HTTPS for all deployments, but there are a few things to keep in mind:
+
+1. Always use HTTPS URLs in your application code, especially for Module Federation remotes.
+2. Update the Content-Security-Policy header in `apps/app-shell/public/_headers` to include your actual deployment domain.
+3. If you see an error like "The connection for this site is not secure" or "uses an unsupported protocol", it's likely because your application is trying to load resources over HTTP instead of HTTPS, or because the Content-Security-Policy header is not configured correctly.
 
 ### Module Federation in Production
 
@@ -136,13 +147,15 @@ The application uses Module Federation to load micro-frontends. In production, t
 ```typescript
 // apps/app-shell/webpack.prod.config.ts
 remotes: [
-  ['hr', 'https://multi-app-in-routes.pages.dev/hr'],
-  ['timeMangment', 'https://multi-app-in-routes.pages.dev/timeMangment'],
-  ['calandar', 'https://multi-app-in-routes.pages.dev/calandar'],
-  ['tracker', 'https://multi-app-in-routes.pages.dev/tracker'],
-  ['projects', 'https://multi-app-in-routes.pages.dev/projects'],
+  ['hr', 'https://d9175b79.nx-mono-poc.pages.dev/hr'],
+  ['timeMangment', 'https://d9175b79.nx-mono-poc.pages.dev/timeMangment'],
+  ['calandar', 'https://d9175b79.nx-mono-poc.pages.dev/calandar'],
+  ['tracker', 'https://d9175b79.nx-mono-poc.pages.dev/tracker'],
+  ['projects', 'https://d9175b79.nx-mono-poc.pages.dev/projects'],
 ]
 ```
+
+**Note**: Make sure to update the domain in the webpack.prod.config.ts file to match your actual deployment domain. The example above uses 'd9175b79.nx-mono-poc.pages.dev', but your deployment might use a different domain.
 
 ## Useful links
 

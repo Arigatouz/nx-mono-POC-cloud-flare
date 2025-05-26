@@ -20,11 +20,11 @@ export default withModuleFederation(
      * ]
      */
     remotes: [
-      ['hr', 'https://multi-app-in-routes.pages.dev/hr'],
-      ['timeMangment', 'https://multi-app-in-routes.pages.dev/timeMangment'],
-      ['calandar', 'https://multi-app-in-routes.pages.dev/calandar'],
-      ['tracker', 'https://multi-app-in-routes.pages.dev/tracker'],
-      ['projects', 'https://multi-app-in-routes.pages.dev/projects'],
+      ['hr', 'https://d9175b79.nx-mono-poc.pages.dev/hr'],
+      ['timeMangment', 'https://d9175b79.nx-mono-poc.pages.dev/timeMangment'],
+      ['calandar', 'https://d9175b79.nx-mono-poc.pages.dev/calandar'],
+      ['tracker', 'https://d9175b79.nx-mono-poc.pages.dev/tracker'],
+      ['projects', 'https://d9175b79.nx-mono-poc.pages.dev/projects'],
     ],
   },
   { dts: false }
