@@ -1,2 +1,6 @@
 name = "nx-mono-poc"
 pages_build_output_dir = "dist/apps"
+compatibility_date = "2025-05-26"
+
+[assets]
+directory = "dist/apps"
